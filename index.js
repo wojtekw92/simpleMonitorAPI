@@ -38,6 +38,8 @@ http.createServer(function (req, res) {
     memory: getMemInfo(),
     load: os.loadavg(),
     disk: diskUsage(),
+    uptime: os.uptime(),
+    network: os.networkInterfaces(),
   }
   res.end(JSON.stringify(obj));
 }).listen(8080);
